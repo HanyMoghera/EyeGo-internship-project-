@@ -12,7 +12,6 @@ services:
       - mongo_data:/data/db
 
   zookeeper:
-    # Patch pin: classic ZK mode (no KRaft / KAFKA_PROCESS_ROLES)
     image: confluentinc/cp-zookeeper:7.4.14
     container_name: zookeeper_container
     environment:
@@ -30,7 +29,6 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper_container:2181
-      # Two listeners must use different ports (Confluent / cp-kafka ZK setup)
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092,PLAINTEXT_HOST://0.0.0.0:9092
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka_container:29092,PLAINTEXT_HOST://localhost:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT

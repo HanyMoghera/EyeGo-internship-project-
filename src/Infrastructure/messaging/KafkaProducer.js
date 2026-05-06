@@ -39,7 +39,9 @@ class KafkaProducer {
         topic: topic,
         messages: [{ value: JSON.stringify(payload) }],
       });
-      console.log(`Producer Event sent to topic: ${topic}`);
+      console.log(
+        `Producer Event sent to topic with data: ${JSON.stringify(payload)}`,
+      );
     } catch (error) {
       console.error(" Producer Error sending event:", error);
       throw error;

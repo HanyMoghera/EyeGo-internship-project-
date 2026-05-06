@@ -1,0 +1,167 @@
+{
+  "info": {
+    "_postman_id": "774a072d-91bf-4e1c-8f84-f94d302fca5a",
+    "name": "Eye Go Project",
+    "description": "this is a collection for my project. I have two ways for testing the first one via local host when I run the project on local host and the secode one for testing the project after deployment in AWS.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40237989",
+    "_collection_link": "https://go.postman.co/collection/40237989-774a072d-91bf-4e1c-8f84-f94d302fca5a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "list items",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"DDL-QUERY\":\"Create Table users( name Varchar(256));\"\r\n}"
+        },
+        "url": {
+          "raw": "127.0.0.1:3000/api/v1/posts",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get item",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"DDL-QUERY\":\"Create Table users( name Varchar(256));\"\r\n}"
+        },
+        "url": {
+          "raw": "127.0.0.1:3000/api/v1/posts/69f956c3f84217e2deda8e1c",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "posts",
+            "69f956c3f84217e2deda8e1c"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create post",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Test tets test \",\r\n  \"content\": \"Testing the event-driven basics for my task.\",\r\n  \"author\": \"Hany\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "127.0.0.1:3000/api/v1/posts",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "v1",
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create a post via AWS",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Test tets test \",\r\n  \"content\": \"Testing the event-driven basics for my task.\",\r\n  \"author\": \"Hany\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://13.60.97.229:3000/posts",
+          "protocol": "http",
+          "host": [
+            "13",
+            "60",
+            "97",
+            "229"
+          ],
+          "port": "3000",
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get posts via AWS",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://13.60.97.229:3000/posts",
+          "protocol": "http",
+          "host": [
+            "13",
+            "60",
+            "97",
+            "229"
+          ],
+          "port": "3000",
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
